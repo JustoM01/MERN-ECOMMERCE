@@ -39,7 +39,22 @@ const resolvers = {
       deleteTodo : async(root, args)=>{
         await Todo.findByIdAndDelete(args.id)
         return "todo deleted"
-       }
+       },
+
+
+
+
+       updateTodo: async ( root,args) => {
+
+        const {id, title} = args
+       
+        await Todo.findByIdAndUpdate(id, {title})
+        return "updated"
+
+
+      },
+
+       
 
 
     }

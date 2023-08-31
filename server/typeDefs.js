@@ -15,6 +15,8 @@ type Todo {
 
 
 
+
+
   type Query {
     welcome: String
     getTodos:[Todo]
@@ -25,6 +27,7 @@ type Todo {
 type Mutation{
 addTodo ( title:String!):Todo
 deleteTodo(id:ID!):Todo
+updateTodo(_id: ID!, title: String!): Todo
 
 }
 
